@@ -1,12 +1,12 @@
-#include <RelayDevice.h>
+#include <Arduino_Yun_Comm.h>
 
 
 bool START_FLAG = false;
-RelayDevice *relay;
+Arduino_Yun_Comm *com;
 
 void setup() {
   // put your setup code here, to run once:
-  relay = new RelayDevice();
+  com = new Arduino_Yun_Comm();
   Serial.begin(9600);
   Serial.flush();
   Serial1.flush();
@@ -15,7 +15,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   Serial.println(START_FLAG);
-  String command = relay->cmd();
+  String command = com->cmd();
   if (command != "NONE"){
     //Serial.println(command);
   }
@@ -30,10 +30,10 @@ bool aamsCommandHandler(bool START_FLAG, String command){
     Serial.println(command);
   }
   if (command.startsWith("CONNECT")){
-    relay->sendCmd("connect");
+    com->sendCmd("connect");
     Serial.println("ARDUINO SEND: CONNECT");
   } else if (command.startsWith("READY")){
-    relay->sendCmd("start");
+    com->sendCmd("start");
     Serial.println("ARDUINO SEND: START");
   } else if (command.startsWith("START")){
     Serial.println("ARDUINO SET: START_FLAG - TRUE");
