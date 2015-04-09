@@ -17,7 +17,7 @@ to any program that needs to communicate with the Arduino.
 
 1. Install the latest Arduino IDE 
 2. Connect Yun to computer via micro USB
-3. Follow the wifi setup procedure here: http://arduino.cc/en/Guide/ArduinoYun
+3. Follow the wifi setup procedure here: [http://arduino.cc/en/Guide/ArduinoYun](http://arduino.cc/en/Guide/ArduinoYun, "Arduino Yun")
 (make sure you that the wireless network is connected to the internet)
 4. Run Bridge -> YunSerialTerminal in Arduino IDE under examples.  This is a simple
 command line interface to the Linux side, via the Arduino.
@@ -54,12 +54,15 @@ Now you can write code via ssh with nano or vi.  You can copy files to the yun
 with scp. 
 
 ## Use
-* To use this library you need to write python code on the Linux side and use: 
+
+To use this library you need to write python code on the Linux side and use: 
 ```
 	from Communication import Communication
 ```
-* On the arduino side, simply add:
+
+On the arduino side, simply add:
 ```
 	#include <Arduino_Yun_Comm.h>
 ```
-* See the example files in each folder to more detailed use.
+
+See the example files in each folder for more detailed use.
