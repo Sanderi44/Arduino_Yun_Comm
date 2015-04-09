@@ -26,26 +26,26 @@ command line interface to the Linux side, via the Arduino.
 (although you may have to add it to the hosts file).
 6. On a separate computer ssh into the Yun with "ssh root@<name of yun>.local" and password: arduino
 7. Once ssh'd in, run these commands to get pip and pyserial:
-```
-opkg update
-opkg install distribute
-opkg install python-openssl
-easy_install pip
-pip install pyserial
+* ```
+	opkg update
+	opkg install distribute
+	opkg install python-openssl
+	easy_install pip
+	pip install pyserial
 ```
 8. The Serial connection between the Atheros and the Arduino is currently in 
 use, so we need to turn it off.  In an ssh session:
-```
-nano /etc/inittab
-// Comment out:
-ttyAth0::askfirst:/bin/ash --login
-// Save and exit
-```
+* ```
+	nano /etc/inittab
+	// Comment out:
+	ttyAth0::askfirst:/bin/ash --login
+	// Save and exit
+*```
 9. To add your yun to the list of known hosts on your linux computer: 
-```
-nano /etc/hosts
-<ip of Yun> <name of Yun> 
-//Save and exit
+* ```
+	nano /etc/hosts
+	<ip of Yun> <name of Yun> 
+	//Save and exit
 ```
 10. Make sure that the arduino library is in your Libraries folder.  Also, 
 make sure that the python library is in your PATH.
