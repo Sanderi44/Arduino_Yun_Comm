@@ -1,5 +1,4 @@
 from Communication import Communication
-from Relay import Relay
 import time
 
 def main():
@@ -9,10 +8,6 @@ def main():
 	com.connectArduino()
 	com.flushSerial()
 
-	"Initialize Relay"
-	relay = Relay('relay3.visalab.com')
-	relay.configID("sand0002000000000000000000000000", 1)
-	relay.statusUpdate("200")
 
 	START = False
 	print "Initialized"
@@ -38,7 +33,7 @@ def main():
 
 def connect(com, relay):
 	timestamp = 0
-	timestamp = float(relay.getTime())
+	time.clock()
 	print timestamp
 	if timestamp > 0:
 		return True
