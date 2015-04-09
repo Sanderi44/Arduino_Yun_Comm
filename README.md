@@ -24,7 +24,7 @@ command line interface to the Linux side, via the Arduino.
 5. Type "ifconfig" and look for the wlan ip address.  This is your Yun's IP. 
  You can also use arduino.local or (whatever else you named it).local for ssh 
 (although you may have to add it to the hosts file).
-6. On a separate computer ssh into the Yun with "ssh root@<name of yun>.local" and password: arduino
+6. On a separate computer ssh into the Yun with "ssh root@"name of yun".local" and password: arduino
 7. Once ssh'd in, run these commands to get pip and pyserial:
 ```
 	opkg update
