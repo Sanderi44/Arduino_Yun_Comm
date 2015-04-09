@@ -13,8 +13,7 @@ to any program that needs to communicate with the Arduino.
 
 
 ## Setup
-### Here are the steps to set up your Arduino Yun for the Arduino_Yun_Comm
-library
+### Here are the steps to set up your Arduino Yun for the Arduino_Yun_Comm library
 
 1. Install the latest Arduino IDE 
 2. Connect Yun to computer via micro USB
@@ -41,11 +40,17 @@ use, so we need to turn it off.  In an ssh session:
 	nano /etc/hosts
 	<ip of Yun> <name of Yun> 
 	//Save and exit
+10. Make sure that the arduino library is in your Libraries folder.  Also, 
+make sure that the python library is in your PATH.
 
-Now you can write code via ssh with nano or vi.  To copy files to the yun 
-use scp. 
+Now you can write code via ssh with nano or vi.  You can copy files to the yun 
+with scp. 
 
 ## Use
+To use this library you need to write python code on the Linux side and use: 
+	from Communication import Communication
 
+On the arduino side, simply add:
+	#include <Arduino_Yun_Comm.h>
 
-
+See the example files in each folder to more detailed use.
